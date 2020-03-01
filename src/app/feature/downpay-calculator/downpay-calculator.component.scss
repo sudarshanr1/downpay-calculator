@@ -9,6 +9,9 @@
   min-height: 200px;
   align-items: center;
   .mat-card {
-    flex-basis: 50%;
+    flex-basis: 75%;
+  }
+  .mat-card-title {
+    text-align: left;
   }
 }

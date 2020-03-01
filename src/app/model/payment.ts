@@ -1,5 +1,10 @@
 export class Payment {
-  private payPeriod: number;
-  private interest: number;
-  private principalAmount: number;
+  year: number;
+  interest: number;
+  principal: number;
+  month: number;
+  amountPerMonth: number;
+  constructor() {
+    this.interest = 2.5; //Default value
+  }
 }

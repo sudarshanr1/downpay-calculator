@@ -6,6 +6,11 @@ import { Component, OnInit } from "@angular/core";
 })
 export class DownpayCalculatorComponent implements OnInit {
   constructor() {}
-
-  ngOnInit() {}
+  public monthlyPayment: number;
+  ngOnInit() {
+    this.monthlyPayment = 0;
+  }
+  updateMonthlyPayment(data) {
+    this.monthlyPayment = data;
+  }
 }

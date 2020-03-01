@@ -4,10 +4,10 @@
       Down payment calculator
     </mat-card-title>
     <mat-card-content>
-      <app-down-pay-form></app-down-pay-form>
+      <app-down-pay-form
+        (monthlyPayment)="updateMonthlyPayment($event)"
+      ></app-down-pay-form>
     </mat-card-content>
-    <mat-card-footer>
-      Value
-    </mat-card-footer>
+    <mat-card-footer> Monthly Payment: {{ monthlyPayment }}</mat-card-footer>
   </mat-card>
 </div>

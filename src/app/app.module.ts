@@ -7,6 +7,7 @@ import { DownpayCalculatorComponent } from "src/app/feature/downpay-calculator/d
 import { DownPayFormComponent } from "src/app/feature/downpay-calculator/down-pay-form/down-pay-form.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DemoMaterialModule } from "./material.module";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { DemoMaterialModule } from "./material.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

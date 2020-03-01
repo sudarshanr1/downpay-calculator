@@ -1,16 +1,35 @@
-<mat-form-field appearance="fill">
-  <mat-label>Payment Period</mat-label>
-  <mat-select>
-    <mat-option value="option">Option</mat-option>
-  </mat-select>
-</mat-form-field>
+<form [formGroup]="formGroup">
+  <mat-form-field appearance="fill">
+    <mat-label>Payment Period in years</mat-label>
+    <mat-select formControlName="year">
+      <mat-option *ngFor="let year of years" [value]="year">
+        {{ year }}
+      </mat-option></mat-select
+    >
+    <mat-error>Payment period is required.</mat-error>
+  </mat-form-field>
 
-<mat-form-field appearance="fill">
-  <mat-label>Interest</mat-label>
-  <input matInput />
-</mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Interest in %</mat-label>
+    <input matInput type="number" min="0" formControlName="interest" />
+  </mat-form-field>
 
-<mat-form-field appearance="fill">
-  <mat-label>Pricipal Amount</mat-label>
-  <input matInput />
-</mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Pricipal Amount</mat-label>
+    <input matInput formControlName="principal" />
+    <mat-error>Principal Amount is required.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Number of months to save for downpayment</mat-label>
+    <mat-select formControlName="month">
+      <mat-option *ngFor="let month of months" [value]="month">
+        {{ month }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Downpayment amount you want to set aside every month</mat-label>
+    <input matInput type="number" min="0" formControlName="amountPerMonth" />
+  </mat-form-field>
+</form>
