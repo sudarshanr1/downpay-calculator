@@ -8,12 +8,14 @@ import { DownPayFormComponent } from "src/app/feature/downpay-calculator/down-pa
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DemoMaterialModule } from "./material.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DollarformatPipe } from "./feature/pipes/dollarformat.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     DownpayCalculatorComponent,
-    DownPayFormComponent
+    DownPayFormComponent,
+    DollarformatPipe
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DollarformatPipe],
+  bootstrap: [AppComponent],
+  exports: [DollarformatPipe]
 })
 export class AppModule {}
