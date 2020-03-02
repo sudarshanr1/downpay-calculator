@@ -6,7 +6,6 @@ import { Payment } from "../model/payment";
 })
 export class DownpayService {
   constructor() {}
-
   getSavingMonths() {
     const months = [];
     const years = 5;

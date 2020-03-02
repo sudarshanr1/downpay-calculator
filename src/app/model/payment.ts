@@ -1,9 +1,9 @@
 export class Payment {
   year: number;
   interest: string;
-  principal: number;
+  principal: string;
   month: number;
-  amountPerMonth: number;
+  amountPerMonth: string;
   constructor() {
     this.interest = "2.5%"; //Default value
   }
