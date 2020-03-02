@@ -31,11 +31,33 @@ export class DownpayService {
     let totalAmount = 0;
     let interest = 0;
     if (paymentInfo.amountPerMonth && paymentInfo.month) {
-      downPayAmount = paymentInfo.amountPerMonth * paymentInfo.month;
+      downPayAmount =
+        Number(
+          paymentInfo.amountPerMonth
+            .toString()
+            .split("")
+            .splice(1)
+            .join("")
+        ) * paymentInfo.month;
     }
 
-    principalAmount = paymentInfo.principal - downPayAmount;
-    interest = (principalAmount * paymentInfo.interest) / 100;
+    if (paymentInfo.interest.toString().includes("%")) {
+      paymentInfo.interest = paymentInfo.interest
+        .toString()
+        .split("%")
+        .join("");
+    }
+
+    principalAmount =
+      Number(
+        paymentInfo.principal
+          .toString()
+          .split("")
+          .splice(1)
+          .join("")
+      ) - downPayAmount;
+
+    interest = (principalAmount * Number(paymentInfo.interest)) / 100;
     totalAmount = principalAmount + interest;
     monthlyPayment = totalAmount / (paymentInfo.year * 12);
 

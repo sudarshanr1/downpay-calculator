@@ -2,3 +2,10 @@
   width: 49%;
   margin-right: 1%;
 }
+
+@media (min-width: 100px) and (max-width: 375px) {
+  .mat-form-field {
+    width: 100%;
+    margin-right: 1%;
+  }
+}

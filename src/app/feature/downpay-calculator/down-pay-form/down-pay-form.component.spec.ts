@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DollarformatPipe } from "../../pipes/dollarformat.pipe";
+import { PercentformatPipe } from "../../pipes/percentformat.pipe";
 
 describe("DownPayFormComponent", () => {
   let component: DownPayFormComponent;
@@ -13,7 +15,7 @@ describe("DownPayFormComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DownPayFormComponent],
+      declarations: [DownPayFormComponent, DollarformatPipe, PercentformatPipe],
       imports: [
         ReactiveFormsModule,
         MatSelectModule,

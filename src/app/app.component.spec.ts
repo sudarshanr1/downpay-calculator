@@ -4,12 +4,18 @@ import { AppComponent } from "./app.component";
 import { DownpayCalculatorComponent } from "./feature/downpay-calculator/downpay-calculator.component";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { DollarformatPipe } from "./feature/pipes/dollarformat.pipe";
+import { PercentformatPipe } from "./feature/pipes/percentformat.pipe";
 describe("AppComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      declarations: [AppComponent, DownpayCalculatorComponent, DollarformatPipe]
+      declarations: [
+        AppComponent,
+        DownpayCalculatorComponent,
+        DollarformatPipe,
+        PercentformatPipe
+      ]
     }).compileComponents();
   }));
 

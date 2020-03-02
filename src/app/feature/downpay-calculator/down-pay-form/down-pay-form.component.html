@@ -11,13 +11,32 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Interest in %</mat-label>
-    <input matInput type="number" min="0" formControlName="interest" />
+    <input
+      [value]="formGroup.get('interest').value | percentformat"
+      matInput
+      formControlName="interest"
+    />
+    <mat-error *ngIf="formGroup.get('interest')?.errors?.required"
+      >Interest is required.</mat-error
+    >
+    <mat-error *ngIf="formGroup.get('interest')?.errors?.validatePercent"
+      >Interest should be positive and with max 2 decimal value.</mat-error
+    >
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Pricipal Amount</mat-label>
-    <input matInput formControlName="principal" />
-    <mat-error>Principal Amount is required.</mat-error>
+    <input
+      [value]="formGroup.get('principal').value | dollarformat"
+      matInput
+      formControlName="principal"
+    />
+    <mat-error *ngIf="formGroup.get('principal')?.errors?.required"
+      >Principal Amount is required.</mat-error
+    >
+    <mat-error *ngIf="formGroup.get('principal')?.errors?.validateAmount"
+      >Principal Amount should be positive and with 2 decimal places.</mat-error
+    >
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -30,6 +49,13 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Downpayment amount you want to set aside every month</mat-label>
-    <input matInput type="number" min="0" formControlName="amountPerMonth" />
+    <input
+      matInput
+      [value]="formGroup.get('amountPerMonth').value | dollarformat"
+      formControlName="amountPerMonth"
+    />
+    <mat-error *ngIf="formGroup.get('amountPerMonth')?.errors?.validateAmount"
+      >Downpay Amount should be positive and with 2 decimal places.</mat-error
+    >
   </mat-form-field>
 </form>

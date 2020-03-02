@@ -2,16 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
   text-align: center;
   margin: 10% 0;
   min-height: 200px;
   align-items: center;
   .mat-card {
-    flex-basis: 75%;
+    max-width: 75%;
   }
   .mat-card-title {
     text-align: left;
+  }
+
+  .mat-card-footer {
+    margin-bottom: 1%;
   }
 }

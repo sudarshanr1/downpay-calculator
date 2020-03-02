@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DemoMaterialModule } from "./material.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DollarformatPipe } from "./feature/pipes/dollarformat.pipe";
+import { PercentformatPipe } from "./feature/pipes/percentformat.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     DownpayCalculatorComponent,
     DownPayFormComponent,
-    DollarformatPipe
+    DollarformatPipe,
+    PercentformatPipe
   ],
   imports: [
     BrowserModule,
