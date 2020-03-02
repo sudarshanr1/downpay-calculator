@@ -6,6 +6,7 @@ import { Payment } from "../model/payment";
 })
 export class DownpayService {
   constructor() {}
+  //Mock number of months(no API)
   getSavingMonths() {
     const months = [];
     const years = 5;
@@ -15,6 +16,7 @@ export class DownpayService {
     return months;
   }
 
+  //Mock pay period(no API)
   getPayPeriod() {
     const years = [];
     for (let i = 0; i < 5; i++) {
@@ -23,6 +25,7 @@ export class DownpayService {
     return years;
   }
 
+  /* Returns monthy payment amount for the payment information */
   getMonthlyPayment(paymentInfo: Payment) {
     let downPayAmount = 0;
     let monthlyPayment = 0;
